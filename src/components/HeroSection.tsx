@@ -17,7 +17,7 @@ export default function HeroSection({ onBookAppointment }: HeroSectionProps) {
           <div className="relative rounded-lg h-48 md:h-[400px] mb-6 md:mb-0 md:flex-1 overflow-hidden shadow-lg bg-black">
             <iframe
               className="w-full h-full object-cover rounded-lg"
-              src="https://www.youtube.com/embed/Kh624un-CaA?autoplay=1&mute=1&loop=1&playlist=Kh624un-CaA"
+              src="https://www.youtube.com/embed/Kh624un-CaA?start=14&autoplay=1&mute=1&loop=1&playlist=Kh624un-CaA"
               title="Precigem Dental World Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

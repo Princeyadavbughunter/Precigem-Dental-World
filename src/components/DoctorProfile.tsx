@@ -4,71 +4,148 @@ interface DoctorProfileProps {
   onBookAppointment: () => void;
 }
 
+interface Doctor {
+  name: string;
+  qualification: string;
+  description: string;
+  image: string;
+  experience?: string;
+  specialization?: string; // Optional simpler title for visual hierarchy
+}
+
+const doctors: Doctor[] = [
+  {
+    name: "Dr. Mayur Khairnar",
+    qualification: "Head Dentist | Chief Periodontist & Oral Implantologist",
+    experience: "17+ Years Experience",
+    specialization: "Implant & Rehabilitation Specialist",
+    description: "Specialist in Full Mouth Rehabilitation and Dental Implants with Immediate Loading. Expert in treating highly atrophied jaws and leading complex implant cases.",
+    image: "/images/doc111.png"
+  },
+  {
+    name: "Dr. Darshana Khairnar",
+    qualification: "Senior Dentist | DSD Specialist & Oral Implantologist",
+    specialization: "Cosmetic & Implant Dentist",
+    description: "Specialist in Digital Smile Design (DSD) and aesthetic dentistry. Focused on delivering natural-looking, smile-enhancing results and skilled oral implantology.",
+    image: "/images/doc222.jpeg"
+  },
+  {
+    name: "Dr. Tejashvi Seth",
+    qualification: "BDS, MDS (Periodontology and Oral Implantology)",
+    specialization: "Periodontist & Implantologist",
+    description: "National speaker and clinical educator on restorative implantology. Specializes in gum diseases, esthetic mucogingival surgeries, smile designing, and digital dental treatment simulation.",
+    image: "/images/doctor/Dr Tejashvi Seth.jpeg"
+  },
+  {
+    name: "Dr. Reena Yadav",
+    qualification: "BDS, MDS (Oral and Maxillofacial Surgery)",
+    specialization: "Oral & Maxillofacial Surgeon",
+    description: "Fellowship in head, face, and neck oncology. Focuses on oral cancer treatment, jaw reconstruction, zygomatic implants, and complex oral rehabilitation including black fungus cases.",
+    image: "/images/doctor/Dr Reena Yadav.jpeg"
+  },
+  {
+    name: "Dr. Adit Mehta",
+    qualification: "BDS, MDS (Conservative Dentistry & Endodontics)",
+    experience: "17+ Years Experience",
+    specialization: "Endodontist & Cosmetic Dentist",
+    description: "Well-respected endodontist and cosmetic/aesthetic dentist specializing in operative dentistry and endodontics.",
+    image: "/images/doctor/Dr adit mehta.jpeg"
+  },
+  {
+    name: "Dr. Sanika",
+    qualification: "FDS (Prosthodontics and Oral Implantology)",
+    specialization: "Prosthodontist & Implantologist",
+    description: "Fellow of International Congress of Oral Implantologists. Dedicated to giving quality dental care utilizing the latest technology and advancements in dentistry.",
+    image: "/images/doctor/Dr sanika.jpeg"
+  },
+  {
+    name: "Dr. Nayana Dandwate",
+    qualification: "BDS, MDS (Orthodontics and Dentofacial Orthopaedics)",
+    specialization: "Orthodontist",
+    description: "Expert in diagnosing and treating tooth and jaw misalignment. Dedicated to creating balanced, beautiful functional smiles through advanced orthodontic treatments.",
+    image: "/images/doctor/Dr nayana.jpeg"
+  },
+  {
+    name: "Dr. Rameez Isani",
+    qualification: "BDS, Digital Dentistry Specialist",
+    specialization: "Digital Dentistry Expert",
+    description: "Niche expertise in integrating advanced digital technologies like intra-oral scanning, guided implant planning, and 3D printing for precise dental solutions.",
+    image: "/images/doctor/Dr Rameez Isani.jpeg"
+  },
+  {
+    name: "Mr. Hemant Khot",
+    qualification: "Dental Laboratory Specialist",
+    specialization: "Lab Operations Head",
+    description: "Oversees operations with over 300 technicians. Skilled in dental restorations using advanced digital design and milling technologies, ensuring high-quality, customized prosthetics.",
+    image: "/images/doctor/Mr. Hemant Khot.jpeg"
+  }
+];
+
 export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps) {
   return (
-    <section className="bg-brandBlue p-4 md:p-8 lg:p-12">
-      <h2 className="text-white text-2xl md:text-4xl font-bold text-center mb-10">Meet Our Specialists</h2>
-
-      <div className="max-w-6xl mx-auto space-y-12">
-        {/* Dr. Mayur Khairnar */}
-        <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg">
-          <div className="md:flex md:gap-8 items-start">
-            <div className="text-center mb-6 md:mb-0 md:flex-shrink-0 md:w-1/3">
-              <div className="w-48 h-48 md:w-64 md:h-64 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden relative border-4 border-[#01659e]">
-                {/* Placeholder image until user provides real one */}
-                <Image src="/images/doc111.png" alt="Dr. Mayur Khairnar" layout="fill" objectFit="cover" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-[#1a897f]">Dr. Mayur Khairnar</h3>
-              <p className="text-gray-600 font-semibold mb-2">Head Dentist | Chief Periodontist & Oral Implantologist</p>
-              <p className="text-sm bg-blue-50 text-[#1a897f] py-1 px-3 rounded-full inline-block font-bold">17+ Years Experience</p>
-            </div>
-
-            <div className="md:flex-grow space-y-4">
-              <div>
-                <h4 className="text-lg font-bold text-gray-800 border-b pb-2 mb-3">Expertise</h4>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex gap-2"><span>👨‍⚕️</span> Specialist in Full Mouth Rehabilitation</li>
-                  <li className="flex gap-2"><span>🦷</span> Expert in Full Mouth Dental Implants with Immediate Loading</li>
-                  <li className="flex gap-2"><span>🔬</span> Extensive experience in treating highly atrophied jaws</li>
-                  <li className="flex gap-2"><span>🏥</span> Leads complex and advanced implant cases at Precigem Dental World</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+    <section className="bg-gradient-to-br from-brandBlue to-[#015a8d] p-4 md:p-12 lg:p-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-white text-3xl md:text-5xl font-bold mb-4">Meet Our Expert Team</h2>
+          <div className="w-24 h-1 bg-[#d4af37] mx-auto rounded-full mb-6"></div>
+          <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto">
+            A collaborative team of specialists dedicated to providing world-class dental care with precision and compassion.
+          </p>
         </div>
 
-        {/* Dr. Darshana Khairnar */}
-        <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg">
-          <div className="md:flex md:gap-8 items-start">
-            <div className="text-center mb-6 md:mb-0 md:flex-shrink-0 md:w-1/3 md:order-2"> {/* Image on right for desktop variation if desired, but keeping left for consistency is often better. Let's keep left for consistency. */}
-              <div className="w-48 h-48 md:w-64 md:h-64 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden relative border-4 border-[#01659e]">
-                {/* Placeholder image */}
-                <Image src="/images/doc222.jpeg" alt="Dr. Darshana Khairnar" layout="fill" objectFit="cover" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {doctors.map((doctor, index) => (
+            <div
+              key={index}
+              className="group bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
+            >
+              {/* Image Section */}
+              <div className="relative pt-8 pb-4 bg-gray-50 flex justify-center">
+                <div className="w-40 h-40 md:w-48 md:h-48 relative rounded-full border-4 border-[#d4af37]/30 group-hover:border-[#d4af37] transition-colors p-1 bg-white">
+                  <div className="w-full h-full relative rounded-full overflow-hidden">
+                    <Image
+                      src={doctor.image}
+                      alt={doctor.name}
+                      layout="fill"
+                      objectFit="cover"
+                      className="group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  {doctor.experience && (
+                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-[#1a897f] text-white text-xs font-bold py-1 px-3 rounded-full shadow-md whitespace-nowrap">
+                      {doctor.experience}
+                    </div>
+                  )}
+                </div>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-[#1a897f]">Dr. Darshana Khairnar</h3>
-              <p className="text-gray-600 font-semibold">Senior Dentist | DSD Specialist & Oral Implantologist</p>
-            </div>
 
-            <div className="md:flex-grow space-y-4 md:order-1">
-              <div>
-                <h4 className="text-lg font-bold text-gray-800 border-b pb-2 mb-3">Expertise</h4>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex gap-2"><span>✨</span> Specialist in Digital Smile Design (DSD)</li>
-                  <li className="flex gap-2"><span>💎</span> Expertise in aesthetic and cosmetic dentistry</li>
-                  <li className="flex gap-2"><span>🦷</span> Skilled in oral implantology</li>
-                  <li className="flex gap-2"><span>😊</span> Focused on delivering natural-looking, smile-enhancing results</li>
-                </ul>
+              {/* Content Section */}
+              <div className="p-6 md:p-8 flex-grow flex flex-col text-center">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 group-hover:text-[#1a897f] transition-colors">
+                  {doctor.name}
+                </h3>
+                <p className="text-[#d4af37] font-semibold text-sm uppercase tracking-wide mb-3">
+                  {doctor.qualification}
+                </p>
+                <div className="w-12 h-0.5 bg-gray-200 mx-auto mb-4 group-hover:bg-[#1a897f] transition-colors"></div>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
+                  {doctor.description}
+                </p>
+
+                {/* Optional: Add a 'View Profile' or small action if needed, currently just purely informational */}
               </div>
             </div>
-          </div>
+          ))}
         </div>
 
-        <div className="text-center mt-8">
-          <button onClick={onBookAppointment} className="bg-white text-[#1a897f] py-4 px-8 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors shadow-md">
-            Book Appointment with Our Experts
+        <div className="text-center mt-16">
+          <button
+            onClick={onBookAppointment}
+            className="bg-white text-[#1a897f] py-4 px-10 rounded-full font-bold text-xl hover:bg-[#1a897f] hover:text-white transition-all duration-300 shadow-lg border-2 border-transparent hover:border-white ring-offset-2 ring-offset-brandBlue"
+          >
+            Schedule Your Consultation
           </button>
         </div>
-
       </div>
     </section>
   );

@@ -48,33 +48,38 @@ export default function ImplantTypes() {
   ];
 
   return (
-    <section className="bg-black text-white p-4 md:p-8 lg:p-12 pb-16">
-      <div className="max-w-7xl mx-auto">
-        <div>
-          <h2 className="text-2xl md:text-4xl font-bold text-center text-[#1a897f] mb-4">
-            When it comes to Dental Implants, choose <em>Precigem Dental World</em>
+    <section className="relative bg-[#0b1120] text-white p-4 md:p-12 lg:p-16 pb-24 overflow-hidden">
+      {/* Abstract background shapes */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-900/20 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-900/20 rounded-full blur-3xl -z-10"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-6 tracking-tight">
+            Advanced <span className="text-gradient-gold">Dental Implants</span>
           </h2>
-          <p className="text-center text-gray-300 mb-8 md:text-lg max-w-3xl mx-auto">
-            At Precigem Dental World, we pride ourselves on bringing together the finest dental specialists under one roof.
+          <div className="w-24 h-1 bg-[#1a897f] mx-auto rounded-full mb-6 opacity-80"></div>
+          <p className="text-center text-gray-400 mb-8 md:text-lg max-w-3xl mx-auto font-light leading-relaxed">
+            At Precigem Dental World, we bring together the finest dental specialists under one roof to restore your smile with precision.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {implantData.map((implant, index) => (
             <div
               key={index}
-              className="bg-white text-gray-800 p-4 md:p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
+              className="group bg-slate-800/80 backdrop-blur-sm border border-slate-700 text-gray-100 p-6 rounded-2xl shadow-xl hover:shadow-2xl hover:bg-slate-800 transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="relative bg-white rounded-lg mb-4 h-40 md:h-64 flex items-center justify-center">
-                <Image src={implant.image} alt={implant.title} layout="fill" objectFit="contain" className="rounded-lg" />
+              <div className="relative bg-white/5 rounded-xl mb-6 h-48 flex items-center justify-center overflow-hidden border border-slate-700/50 group-hover:border-brandTeal/30 transition-colors">
+                <Image src={implant.image} alt={implant.title} fill className="object-contain p-4 group-hover:scale-110 transition-transform duration-500" />
               </div>
-              <h3 className="font-bold text-center mb-3 md:text-lg">{implant.title}</h3>
-              <p className="text-center mb-3 text-sm md:text-base">{implant.description}</p>
-              <ul className="space-y-1">
+              <h3 className="font-bold text-center mb-4 text-xl text-white group-hover:text-[#1a897f] transition-colors">{implant.title}</h3>
+              <p className="text-center mb-6 text-sm text-gray-400 leading-relaxed min-h-[60px]">{implant.description}</p>
+              <ul className="space-y-3">
                 {implant.benefits.map((benefit, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-[#1a897f]">✓</span>
-                    <span className="text-sm md:text-base">{benefit}</span>
+                  <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                    <span className="text-brandTeal mt-0.5">✓</span>
+                    <span className="font-light">{benefit}</span>
                   </li>
                 ))}
               </ul>

@@ -83,12 +83,15 @@ const doctors: Doctor[] = [
 
 export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps) {
   return (
-    <section className="bg-gradient-to-br from-brandBlue to-[#015a8d] p-4 md:p-12 lg:p-16">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative bg-gray-50 py-16 md:py-24 overflow-hidden">
+      {/* Decorative background */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] z-0"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-white text-3xl md:text-5xl font-bold mb-4">Meet Our Expert Team</h2>
-          <div className="w-24 h-1 bg-[#d4af37] mx-auto rounded-full mb-6"></div>
-          <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900 tracking-tight">Meet Our <span className="text-gradient-gold">Expert Team</span></h2>
+          <div className="w-24 h-1 bg-[#1a897f] mx-auto rounded-full mb-6"></div>
+          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto font-light">
             A collaborative team of specialists dedicated to providing world-class dental care with precision and compassion.
           </p>
         </div>
@@ -97,22 +100,21 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
           {doctors.map((doctor, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
+              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
             >
               {/* Image Section */}
-              <div className="relative pt-8 pb-4 bg-gray-50 flex justify-center">
-                <div className="w-40 h-40 md:w-48 md:h-48 relative rounded-full border-4 border-[#d4af37]/30 group-hover:border-[#d4af37] transition-colors p-1 bg-white">
-                  <div className="w-full h-full relative rounded-full overflow-hidden">
+              <div className="relative pt-8 pb-4 bg-gradient-to-b from-gray-50 to-white flex justify-center">
+                <div className="w-40 h-40 md:w-48 md:h-48 relative rounded-full border-4 border-white shadow-xl group-hover:scale-105 transition-transform duration-500 ring-4 ring-gray-50 group-hover:ring-brandTeal/20">
+                  <div className="w-full h-full relative rounded-full overflow-hidden bg-gray-200">
                     <Image
                       src={doctor.image}
                       alt={doctor.name}
-                      layout="fill"
-                      objectFit="cover"
-                      className="group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   {doctor.experience && (
-                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-[#1a897f] text-white text-xs font-bold py-1 px-3 rounded-full shadow-md whitespace-nowrap">
+                    <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-[#1a897f] text-white text-xs font-bold py-1 px-4 rounded-full shadow-lg whitespace-nowrap z-10">
                       {doctor.experience}
                     </div>
                   )}
@@ -120,15 +122,18 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
               </div>
 
               {/* Content Section */}
-              <div className="p-6 md:p-8 flex-grow flex flex-col text-center">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 group-hover:text-[#1a897f] transition-colors">
+              <div className="p-6 md:p-8 flex-grow flex flex-col text-center relative">
+                {/* Decorative quote icon */}
+                <div className="absolute top-4 right-6 text-4xl text-gray-100 font-serif opacity-50 group-hover:text-brandTeal/10 transition-colors">”</div>
+
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 group-hover:text-brandTeal transition-colors">
                   {doctor.name}
                 </h3>
-                <p className="text-[#d4af37] font-semibold text-sm uppercase tracking-wide mb-3">
+                <p className="text-[#1a897f] font-semibold text-sm uppercase tracking-wider mb-4">
                   {doctor.qualification}
                 </p>
-                <div className="w-12 h-0.5 bg-gray-200 mx-auto mb-4 group-hover:bg-[#1a897f] transition-colors"></div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
+                <div className="w-12 h-0.5 bg-gray-100 mx-auto mb-5 group-hover:bg-brandTeal/30 transition-colors"></div>
+                <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-grow font-light">
                   {doctor.description}
                 </p>
               </div>
@@ -139,7 +144,7 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
         <div className="text-center mt-16">
           <button
             onClick={onBookAppointment}
-            className="bg-white text-[#1a897f] py-4 px-10 rounded-full font-bold text-xl hover:bg-[#1a897f] hover:text-white transition-all duration-300 shadow-lg border-2 border-transparent hover:border-white ring-offset-2 ring-offset-brandBlue"
+            className="bg-white text-brandTeal py-4 px-10 rounded-full font-bold text-lg hover:bg-brandTeal hover:text-white transition-all duration-300 shadow-lg border-2 border-brandTeal hover:border-transparent hover:shadow-cyan-500/30"
           >
             Schedule Your Consultation
           </button>

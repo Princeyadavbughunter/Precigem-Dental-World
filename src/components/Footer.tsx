@@ -39,9 +39,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-gray-700 font-bold hover:text-[#1a897f] transition-colors cursor-pointer block"
             >
-              📍
-
-              Precigem Dental World Andheri West, opposite Kokilaben hospital
+              📍 Precigem Dental World 301, Sai Iconic Tower, 4 Bungalows – Lokhandwala Road, Andheri West, Mumbai – 400053
 
 
             </a>

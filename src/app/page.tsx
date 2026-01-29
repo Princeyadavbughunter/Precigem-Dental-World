@@ -57,7 +57,6 @@ export default function Home() {
     const timer = setTimeout(() => setShowPopup(true), 2000);
     return () => clearTimeout(timer);
   }, []);
-
   // Section visibility observer
   useEffect(() => {
     const observerOptions = {
@@ -127,4 +126,3 @@ export default function Home() {
     </div>
   );
 }
-

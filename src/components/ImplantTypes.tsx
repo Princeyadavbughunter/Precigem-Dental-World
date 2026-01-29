@@ -48,39 +48,40 @@ export default function ImplantTypes() {
   ];
 
   return (
-    <>
-      <section className="bg-black text-white p-4 md:p-8 lg:p-12 pb-16">
-        <div className="max-w-7xl mx-auto">
+    <section className="bg-black text-white p-4 md:p-8 lg:p-12 pb-16">
+      <div className="max-w-7xl mx-auto">
+        <div>
           <h2 className="text-2xl md:text-4xl font-bold text-center text-[#1a897f] mb-4">
             When it comes to Dental Implants, choose <em>Precigem Dental World</em>
           </h2>
           <p className="text-center text-gray-300 mb-8 md:text-lg max-w-3xl mx-auto">
             At Precigem Dental World, we pride ourselves on bringing together the finest dental specialists under one roof.
           </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {implantData.map((implant, index) => (
-              <div key={index} className="bg-white text-gray-800 p-4 md:p-6 rounded-lg">
-                <div className="relative bg-white rounded-lg mb-4 h-40 md:h-64 flex items-center justify-center">
-                  <Image src={implant.image} alt={implant.title} layout="fill" objectFit="contain" className="rounded-lg" />
-                </div>
-                <h3 className="font-bold text-center mb-3 md:text-lg">{implant.title}</h3>
-                <p className="text-center mb-3 text-sm md:text-base">{implant.description}</p>
-                <ul className="space-y-1">
-                  {implant.benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#1a897f]">✓</span>
-                      <span className="text-sm md:text-base">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
 
-
-    </>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {implantData.map((implant, index) => (
+            <div
+              key={index}
+              className="bg-white text-gray-800 p-4 md:p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
+            >
+              <div className="relative bg-white rounded-lg mb-4 h-40 md:h-64 flex items-center justify-center">
+                <Image src={implant.image} alt={implant.title} layout="fill" objectFit="contain" className="rounded-lg" />
+              </div>
+              <h3 className="font-bold text-center mb-3 md:text-lg">{implant.title}</h3>
+              <p className="text-center mb-3 text-sm md:text-base">{implant.description}</p>
+              <ul className="space-y-1">
+                {implant.benefits.map((benefit, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-[#1a897f]">✓</span>
+                    <span className="text-sm md:text-base">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

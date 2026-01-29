@@ -20,7 +20,7 @@ const doctors: Doctor[] = [
     experience: "17+ Years Experience",
     specialization: "Implant & Rehabilitation Specialist",
     description: "Specialist in Full Mouth Rehabilitation and Dental Implants with Immediate Loading. Expert in treating highly atrophied jaws and leading complex implant cases.",
-    image: "/images/doc111.png"
+    image: "/images/doctor/drmayur.jpeg"
   },
   {
     name: "Dr. Darshana Khairnar",
@@ -97,7 +97,7 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
           {doctors.map((doctor, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
+              className="group bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
             >
               {/* Image Section */}
               <div className="relative pt-8 pb-4 bg-gray-50 flex justify-center">
@@ -131,8 +131,6 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
                 <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
                   {doctor.description}
                 </p>
-
-                {/* Optional: Add a 'View Profile' or small action if needed, currently just purely informational */}
               </div>
             </div>
           ))}

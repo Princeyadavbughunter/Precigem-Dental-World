@@ -39,8 +39,11 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-gray-700 font-bold hover:text-[#1a897f] transition-colors cursor-pointer block"
             >
-              📍 Smile Dental Hospital
-              Mukti Nagar, Acharya Marg, Beside Unique Restaurant, Ghatla, Chembur East, Mumbai – 400071
+              📍
+
+              Precigem Dental World Andheri West, opposite Kokilaben hospital
+
+
             </a>
             <p className="text-sm text-gray-500 mt-1">Click to open in Google Maps</p>
           </div>
